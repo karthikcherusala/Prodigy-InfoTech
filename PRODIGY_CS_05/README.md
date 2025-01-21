@@ -1,46 +1,67 @@
-# Basic Keylogger Program
+# Packet Sniffer Tool
 
-This project is a simple keylogger built using Python's `pynput` library. It records keystrokes and saves them to a log file for educational and ethical use only.
+## Overview
+
+This is a Python-based packet sniffer that captures and analyzes network packets. The tool displays relevant information such as:
+- Source and destination IP addresses
+- Protocols (TCP, UDP, ICMP)
+- Packet payload data (if available)
+
+**Author:** Thaslim Mohamed
 
 ## Features
 
-- Logs all printable characters and special keys (e.g., `Enter`, `Backspace`).
-- Saves keystrokes to a file named `keylog.txt`.
-- Exits gracefully when the `Esc` key is pressed.
+- Captures and analyzes packets in real-time.
+- Displays source and destination IP addresses.
+- Identifies common protocols (TCP, UDP, ICMP).
+- Extracts and displays packet payload data (when available).
 
 ## Requirements
 
 - Python 3.x
-- `pynput` library
+- `scapy` library
 
 ## Installation
 
 1. Clone the repository or download the script.
 2. Install the required library:
    ```bash
-   pip install pynput
+   pip install scapy
 Usage
-Run the script:
+Run the script as an administrator or with sudo:
 bash
 Copy code
-python keylogger.py
-The program will record all keystrokes and save them to a file named keylog.txt in the current directory.
-Press the Esc key to stop the keylogger.
+sudo python packet_sniffer.py
+The tool will start capturing packets in real-time. Press Ctrl+C to stop the program.
 Example Output
-If you type "Hello World!" followed by pressing Enter, the keylog.txt file will look like this:
+When a packet is captured, the output might look like this:
 
-css
+yaml
 Copy code
-Hello World! [Key.enter]
+Packet Captured:
+Source IP: 192.168.1.2
+Destination IP: 8.8.8.8
+Protocol: 6
+Protocol Type: TCP
+Payload: GET / HTTP/1.1
 Notes
-Ethical Considerations: This program should only be used on devices you own or with explicit permission from the owner. Unauthorized use is a violation of privacy and may be illegal.
-Permissions: Ensure you have permission to test or run this program on any device.
-Log File Location: The keystrokes are saved in a file named keylog.txt in the directory where the script is executed.
+Permissions: Capturing packets typically requires administrative privileges. Run the program with sudo or as an administrator.
+Ethical Use: Use this tool responsibly and only on networks you own or have permission to monitor.
+Payload Data: The tool displays payload data when available. Sensitive data should be handled with care.
+Disclaimer
+This tool is for educational purposes only. Unauthorized use of this tool to monitor network traffic may violate privacy laws. Use it only on authorized networks or systems.
+
+Author
+Name: Thaslim Mohamed
+Contact: [Your Contact Information Here]
 License
 This project is licensed under the MIT License.
 
-Disclaimer
-This tool is for educational purposes only. The developers are not responsible for any misuse of this software.
+Troubleshooting
+Permission Error: Ensure you run the program as an administrator or with sudo.
+Dependencies: Make sure you have the scapy library installed.
+Contributions
+Contributions to enhance this tool are welcome. Submit pull requests or open issues for suggestions.
 
 yaml
 Copy code
@@ -48,18 +69,6 @@ Copy code
 ---
 
 ### **Ethical Disclaimer**
-Keyloggers have potential for misuse. Always ensure:
-- You have explicit permission to use it.
-- You comply with applicable laws and regulations.
-- The program is used responsibly and transparently. 
+This tool is intended for learning and educational purposes only. Unauthorized packet sniffing is illegal and unethical. Always obtain proper authorization before using this tool on any network. 
 
-Let me know if you’d like to enhance this with additional features, such as logging timestamps or implementing encryption for the logs!
-
-
-
-
-
-
-
-
-
+Let me know if you need additional features or enhancements, such as saving captured packets to a file or filtering by specific protocols!
